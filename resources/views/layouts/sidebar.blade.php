@@ -47,7 +47,8 @@
 
 
 
-                {{-- @if (auth()->user()->hasRole('manajemen') || auth()->user()->hasRole('pegawai')) --}}
+                {{-- @if (auth()->user()->role_id('1') || auth()->user()->role_id('2')) --}}
+                @if (auth()->user()->role_id == 1 || auth()->user()->role_id == 2)
                 <li class="nav-header">MASTER</li>
                 {{-- <li class="nav-item">
                     <a href="/pepas" class="nav-link">
@@ -82,9 +83,10 @@
                         </p>
                     </a>
                 </li>
-                {{-- @endif --}}
+                @endif
 
-                {{-- @if (auth()->user()->hasRole('manajemen')) --}}
+                {{-- @if (auth()->user()->hasRole('1')) --}}
+                @if (auth()->user()->role_id == 1)
                 <li class="nav-item">
                     <a href="/stokobat" class="nav-link">
                         <i class="nav-icon fas fa fa-medkit"></i>
@@ -93,7 +95,7 @@
                         </p>
                     </a>
                 </li>
-                {{-- @endif --}}
+                @endif
 
                 {{-- <li class="nav-header">REPORT</li>
                 <li class="nav-item">
@@ -110,12 +112,14 @@
                         <p>Setting</p>
                     </a>
                 </li> --}}
+                @if (auth()->user()->role_id == 1 || auth()->user()->role_id == 2)
                 <li class="nav-item">
                     <a href="/profile" class="nav-link">
                         <i class=" nav-icon fas fa-user-edit"></i>
                         <p>Profil</p>
                     </a>
                 </li>
+                @endif
 
             </ul>
         </nav> <!-- /.en- sidebar -->
