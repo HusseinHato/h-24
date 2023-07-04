@@ -21,6 +21,9 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'ismanajemen',
+        'notelp_pegawai',
+        'status_pegawai'
     ];
 
     /**
@@ -42,4 +45,9 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+
+    public function pasiens()
+    {
+        return $this->hasMany(Pasien::class);
+    }
 }
