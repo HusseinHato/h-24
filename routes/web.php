@@ -1,13 +1,10 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
-<<<<<<< Updated upstream
-
-=======
-use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\PasienController;
 use App\Http\Controllers\PegawaiController;
->>>>>>> Stashed changes
+use App\Http\Middleware\Pegawai;
+use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -20,10 +17,6 @@ use App\Http\Controllers\PegawaiController;
 */
 
 Route::get('/', function () {
-<<<<<<< Updated upstream
-    return view('welcome');
-});
-=======
     return view('home');
 });
 
@@ -33,30 +26,28 @@ Route::get('/', function () {
 |--------------------------------------------------------------------------
 */
 
-Route::group(['middleware' => ['auth', 'role:1, 0']], function () {
-
-    // Route::get('/pegawai', function () {
-    //     return view('datamaster/pegawai');
-    // });
-
-    // Route::get('/pasien', function () {
-    //     return view('datamaster/pasien');
-    // });
-
-    Route::get('/obat', function () {
-        return view('datamaster/obat');
-    });
-
-    Route::get('/profile', function () {
-        return view('profil/profile');
-    });
-
+Route::group(['middleware' => ['auth', 'role : 1, 0']], function () {
 });
 
 Route::get('/stokobat', function () {
     return view('datamaster/stokobat');
-})->middleware('auth','role:1');
+})->middleware('auth');
 
+// Route::get('/pegawai', function () {
+//     return view('datamaster/pegawai');
+// });
+
+// Route::get('/pasien', function () {
+//     return view('datamaster/pasien');
+// });
+
+Route::get('/obat', function () {
+    return view('datamaster/obat');
+});
+
+Route::get('/profile', function () {
+    return view('profil/profile');
+});
 
 Route::post('/addpegawai', [PegawaiController::class, 'store']);
 Route::post('/editpegawai', [PegawaiController::class, 'update']);
@@ -66,7 +57,6 @@ Route::resource('user', PegawaiController::class);
 // Route::get('/pasien', [PasienController::class, 'index']);
 Route::post('/editpasien', [PasienController::class, 'update']);
 Route::resource('pasien', PasienController::class);
-
 
 /*
 |--------------------------------------------------------------------------
@@ -88,4 +78,3 @@ Route::post('/reset-password', 'Auth\ResetPasswordController@reset')->name('pass
 Auth::routes();
 
 Route::get('/dashboard', [App\Http\Controllers\HomeController::class, 'index']);
->>>>>>> Stashed changes

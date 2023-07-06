@@ -13,12 +13,12 @@ class Checkrole
      *
      * @param  \Closure(\Illuminate\Http\Request): (\Symfony\Component\HttpFoundation\Response)  $next
      */
-    public function handle(Request $request, Closure $next,...$role): Response
+    public function handle(Request $request, Closure $next, ...$role): Response
     {
         if (in_array($request->user()->is_manajemen, $role)) {
             return $next($request);
         }
-        return redirect('/dashboard');
+        return redirect('/');
         // return $next($request);
     }
 }

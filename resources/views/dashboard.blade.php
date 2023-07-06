@@ -28,7 +28,7 @@
         <!-- Small boxes (Stat box) -->
         <div class="row">
 
-          @if (auth()->user()->is_manajemen == 1 || auth()->user()->is_manajemen == 0)
+            @if (auth()->user()->role_id == 1 || auth()->user()->role_id == 2)
           <div class="col-lg-3 col-6">
             <!-- small box -->
             <div class="small-box bg-info">
@@ -79,7 +79,7 @@
           <!-- ./col -->
           @endif
 
-          @if (auth()->user()->is_manajemen == 1)
+          @if (auth()->user()->role_id == 1)
            <!-- ./col -->
            <div class="col-lg-3 col-6">
               <!-- small box -->
