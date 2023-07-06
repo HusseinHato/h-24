@@ -27,6 +27,8 @@ Route::get('/', function () {
 */
 
 Route::group(['middleware' => ['auth', 'role : 1, 0']], function () {
+
+    
 });
 
 Route::get('/stokobat', function () {

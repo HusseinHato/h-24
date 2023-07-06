@@ -49,7 +49,8 @@
 
                 {{-- @if (auth()->user()->role_id('1') || auth()->user()->role_id('2')) --}}
                 <li class="nav-header">MASTER</li>
-                @if (auth()->user()->is_manajemen == 1 || auth()->user()->is_manajemen == 0)
+                <!-- @if (auth()->user()->is_manajemen == 1 || auth()->user()->is_manajemen == 0) -->
+                @if (auth()->user()->is_manajemen == 1)
                 <li class="nav-item">
                     <a href="/pegawai" class="nav-link">
                         <i class="nav-icon fa fa-user-circle"></i>
@@ -58,6 +59,7 @@
                         </p>
                     </a>
                 </li>
+                @endif
 
                 <li class="nav-item">
                     <a href="/pasien" class="nav-link">
@@ -79,6 +81,7 @@
                 @endif
 
                 {{-- @if (auth()->user()->hasRole('1')) --}}
+
                 @if (auth()->user()->is_manajemen == 1)
                 <li class="nav-item">
                     <a href="/stokobat" class="nav-link">
@@ -105,6 +108,7 @@
                         <p>Setting</p>
                     </a>
                 </li> --}}
+
                 @if (auth()->user()->is_manajemen == 1 || auth()->user()->is_manajemen == 0)
                 <li class="nav-item">
                     <a href="/profile" class="nav-link">
