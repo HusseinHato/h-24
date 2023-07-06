@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Pegawai;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class PegawaiController extends Controller
@@ -12,7 +12,9 @@ class PegawaiController extends Controller
      */
     public function index()
     {
-        //
+        return view('datamaster.pegawai', [
+            "pegawai" => User::all()
+        ]);
     }
 
     /**
@@ -28,13 +30,21 @@ class PegawaiController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        User::create([
+            'name' => $request->nama,
+            'is_manajemen' => $request->role,
+            'email' => $request->email,
+            'notelp_pegawai' => $request->notelp,
+            'status_pegawai' => $request->status,
+            'password' =>  $request->password,
+        ]);
+        return redirect('/pegawai');
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(Pegawai $pegawai)
+    public function show()
     {
         //
     }
@@ -42,7 +52,7 @@ class PegawaiController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Pegawai $pegawai)
+    public function edit()
     {
         //
     }
@@ -50,16 +60,25 @@ class PegawaiController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Pegawai $pegawai)
+    public function update(Request $request)
     {
-        //
+        $user = User::findOrFail($request->id);
+        $user->name = $request->nama;
+        $user->is_manajemen = $request->role;
+        $user->email = $request->email;
+        $user->notelp_pegawai = $request->notelp;
+        $user->status_pegawai = $request->status;
+        $user->save();
+
+        return redirect('/pegawai');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Pegawai $pegawai)
+    public function destroy(User $user)
     {
-        //
+        $user->delete();
+        return redirect('/pegawai');
     }
 }

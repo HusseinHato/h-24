@@ -13,19 +13,20 @@ class Pasien extends Model
     ];
 
     protected $fillable = [
-        'namapasien',
-        'alamatpasien',
-        'notelppasien',
-        'statuspasien',
+        'nama_pasien',
+        'user_id',
+        'alamat_pasien',
+        'notelp_pasien',
+        'status_pasien',
     ];
 
-    // public function obat()
-    // {
-    //     return $this->hasMany(Obat::class);
-    // }
+    public function pembelians()
+    {
+        return $this->hasMany(Pembelian::class);
+    }
 
-    // public function pembelian()
-    // {
-    //     return $this->hasMany(Pembelian::class);
-    // }
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }

@@ -18,13 +18,9 @@ class Obat extends Model
         'hargaobat',
     ];
 
-    public function pembelian()
+    public function pembelians()
     {
-        return $this->hasMany(Pembelian::class);
+        return $this->belongsToMany(Pembelian::class);
     }
 
-    public function user()
-    {
-        return $this->belongsTo(User::class);
-    }
 }
