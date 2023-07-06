@@ -17,11 +17,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-<<<<<<< Updated upstream
     return view('welcome');
-});
-=======
-    return view('home');
 });
 
 /*
@@ -37,6 +33,13 @@ Route::get('/stokobat', function () {
     return view('datamaster/stokobat');
 })->middleware('auth');
 
+// Route::get('/pegawai', function () {
+//     return view('datamaster/pegawai');
+// });
+
+// Route::get('/pasien', function () {
+//     return view('datamaster/pasien');
+// });
 
 Route::get('/obat', function () {
     return view('datamaster/obat');
@@ -75,4 +78,3 @@ Route::post('/reset-password', 'Auth\ResetPasswordController@reset')->name('pass
 Auth::routes();
 
 Route::get('/dashboard', [App\Http\Controllers\HomeController::class, 'index']);
->>>>>>> Stashed changes
