@@ -5,6 +5,7 @@ use App\Http\Controllers\PegawaiController;
 use App\Http\Middleware\Pegawai;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\HomeController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -26,7 +27,7 @@ Route::get('/', function () {
 |--------------------------------------------------------------------------
 */
 
-Route::group(['middleware' => ['auth', 'role : 1, 0']], function () {
+Route::group(['middleware' => ['auth', 'role']], function () {
 
     Route::post('/addpegawai', [PegawaiController::class, 'store']);
     Route::post('/editpegawai', [PegawaiController::class, 'update']);
