@@ -9,22 +9,22 @@ class Pembelian extends Model
 {
     use HasFactory;
 
-    // protected $guarded = [
-    //     'id'
-    // ];
+    protected $guarded = [
+        'id'
+    ];
 
-    // protected $fillable = [
-    //     'tglpembelian',
-    //     'total_harga_pembelian',
-    // ];
+    protected $fillable = [
+        'tglpembelian',
+        'total_harga_pembelian',
+    ];
 
-    // public function user()
-    // {
-    //     return $this->hasMany(User::class);
-    // }
+    public function pasien()
+    {
+        return $this->belongsTo(Pasien::class);
+    }
 
-    // public function obat()
-    // {
-    //     return $this->hasMany(Obat::class);
-    // }
+    public function obats()
+    {
+        return $this->belongsToMany(Obat::class);
+    }
 }

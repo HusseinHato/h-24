@@ -6,18 +6,19 @@ use Closure;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
 
-class Manajemen
+class Checkrole
 {
     /**
      * Handle an incoming request.
      *
      * @param  \Closure(\Illuminate\Http\Request): (\Symfony\Component\HttpFoundation\Response)  $next
      */
-    public function handle(Request $request, Closure $next): Response
+    public function handle(Request $request, Closure $next, ...$role): Response
     {
-        if (!auth()->check() || auth()->user()->is_manajemen !== 1) {
-            return redirect('/login')->with('message', 'Login to access manajemen!');
+        if (in_array($request->user()->is_manajemen, $role)) {
+            return $next($request);
         }
-        return $next($request);
+        return redirect('/');
+        // return $next($request);
     }
 }

@@ -15,23 +15,20 @@ class DatabaseSeeder extends Seeder
     {
 
         User::create([
-            'role_id'=>'1',
-            'name'=>'manajemen',
-            'email'=>'manajemen@manajemen.com',
-            'password'=>bcrypt('manajemen'),
+            'name' => 'manajemen',
+            'is_manajemen' => true,
+            'email' => 'manajemen@manajemen.com',
+            'password' => bcrypt('manajemen'),
+            'notelp_pegawai' => '081123456789',
+            'status_pegawai' => true
         ]);
         User::create([
-            'role_id'=>'2',
-            'name'=>'pegawai',
-            'email'=>'pegawai@pegawai.com',
-            'password'=>bcrypt('pegawai'),
+            'name' => 'pegawai',
+            'is_manajemen' => false,
+            'email' => 'pegawai@pegawai.com',
+            'password' => bcrypt('pegawai'),
+            'notelp_pegawai' => '081987654321',
+            'status_pegawai' => true
         ]);
-        
-        // \App\Models\User::factory(10)->create();
-
-        // \App\Models\User::factory()->create([
-        //     'name' => 'Test User',
-        //     'email' => 'test@example.com',
-        // ]);
     }
 }

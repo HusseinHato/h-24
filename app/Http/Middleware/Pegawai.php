@@ -15,8 +15,8 @@ class Pegawai
      */
     public function handle(Request $request, Closure $next): Response
     {
-        if(!auth()->check() || auth()->user()->role_id !== 2){
-            return redirect('/login')->with('message','Login to access pegawai!');
+        if (!auth()->check() || auth()->user()->is_manajemen !== 2) {
+            return redirect('/login')->with('message', 'Login to access pegawai!');
         }
         return $next($request);
     }

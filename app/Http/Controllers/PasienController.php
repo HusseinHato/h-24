@@ -12,7 +12,9 @@ class PasienController extends Controller
      */
     public function index()
     {
-        //
+        return view('datamaster.pasien', [
+            'pasien' => Pasien::with('user')->get()
+        ]);
     }
 
     /**
@@ -28,7 +30,14 @@ class PasienController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Pasien::create([
+            'nama_pasien' => $request->nama,
+            'user_id' => $request->user_id,
+            'notelp_pasien' => $request->notelp,
+            'status_pasien' => $request->status,
+            'alamat_pasien' =>  $request->alamatpasien,
+        ]);
+        return redirect('/pasien');
     }
 
     /**
@@ -50,9 +59,15 @@ class PasienController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Pasien $pasien)
+    public function update(Request $request)
     {
-        //
+        $pasien = Pasien::findOrFail($request->id);
+        $pasien->nama_pasien = $request->nama;
+        $pasien->notelp_pasien = $request->notelp;
+        $pasien->status_pasien = $request->status;
+        $pasien->alamat_pasien =  $request->alamatpasien;
+        $pasien->save();
+        return redirect('/pasien');
     }
 
     /**
@@ -60,6 +75,7 @@ class PasienController extends Controller
      */
     public function destroy(Pasien $pasien)
     {
-        //
+        $pasien->delete();
+        return redirect('/pasien');
     }
 }
