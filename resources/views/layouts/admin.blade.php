@@ -30,6 +30,7 @@
     <link rel="stylesheet" href="{{ asset('assets/plugins/summernote/summernote-bs4.min.css') }}">
     {{-- css apotek --}}
     <link rel="stylesheet" href="{{ 'assets/dist/css/apotek.css' }}">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 
 <body class="hold-transition sidebar-mini layout-fixed">

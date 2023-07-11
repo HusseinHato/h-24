@@ -3,7 +3,9 @@
 use App\Http\Controllers\PasienController;
 use App\Http\Controllers\PegawaiController;
 use App\Http\Controllers\ObatController;
+use App\Http\Controllers\PembelianController;
 use App\Http\Middleware\Pegawai;
+use App\Models\Pembelian;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -52,9 +54,14 @@ Route::group(['middleware' => ['auth', 'role:0']], function () {
 //     return view('datamaster/pasien');
 // });
 
-Route::get('/obat', function () {
-    return view('datamaster/obat');
-});
+// Route::get('/obat', function () {
+//     return view('datamaster/obat');
+// });
+Route::get('/obat', [PembelianController::class, 'index']);
+Route::post('/addpembelian', [PembelianController::class, 'store']);
+Route::post('/updatepembelian', [PembelianController::class, 'update']);
+Route::get('/obat/{id}/stok', [PembelianController::class, 'getstok']);
+
 
 Route::get('/profile', function () {
     return view('profil/profile');

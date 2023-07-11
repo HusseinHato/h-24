@@ -25,6 +25,7 @@ class Pembelian extends Model
 
     public function obats()
     {
-        return $this->belongsToMany(Obat::class);
+        return $this->belongsToMany(Obat::class, 'detail_pembelians')->withPivot('jumlah_pembelian', 'subtotal_pembelian', 'estimasi_obat_habis', 'tgl_dipesan')
+            ->withTimestamps();
     }
 }

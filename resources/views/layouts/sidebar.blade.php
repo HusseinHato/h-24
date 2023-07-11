@@ -73,7 +73,7 @@
                     <a href="/obat" class="nav-link">
                         <i class="nav-icon fas fa fa-medkit"></i>
                         <p>
-                            Obat
+                            Penjualan Obat
                         </p>
                     </a>
                 </li>
@@ -86,7 +86,7 @@
                     <a href="/stokobat" class="nav-link">
                         <i class="nav-icon fas fa fa-medkit"></i>
                         <p>
-                           Stok Obat
+                           Obat
                         </p>
                     </a>
                 </li>
