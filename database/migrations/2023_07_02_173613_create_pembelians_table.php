@@ -16,6 +16,7 @@ return new class extends Migration
             $table->foreignId('pasien_id')->constrained()->cascadeOnDelete();
             $table->date('tgl_pembelian');
             $table->integer('total_harga_pembelian');
+            $table->string('catatan');
             $table->timestamps();
         });
     }

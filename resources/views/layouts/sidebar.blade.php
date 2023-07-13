@@ -73,7 +73,7 @@
                     <a href="/obat" class="nav-link">
                         <i class="nav-icon fas fa fa-medkit"></i>
                         <p>
-                            Obat
+                            Penjualan Obat
                         </p>
                     </a>
                 </li>
@@ -86,7 +86,7 @@
                     <a href="/stokobat" class="nav-link">
                         <i class="nav-icon fas fa fa-medkit"></i>
                         <p>
-                           Stok Obat
+                           Obat
                         </p>
                     </a>
                 </li>
@@ -100,7 +100,7 @@
                     </a>
                 </li> --}}
 
-                <li class="nav-header">PENGATURAN</li>
+                {{-- <li class="nav-header">PENGATURAN</li> --}}
                 {{-- <li class="nav-item">
                     <a href="#" class="nav-link">
                         <i class=" nav-icon fas fa-cog"></i>
@@ -108,14 +108,14 @@
                     </a>
                 </li> --}}
 
-                @if (auth()->user()->is_manajemen == 1 || auth()->user()->is_manajemen == 0)
+                {{-- @if (auth()->user()->is_manajemen == 1 || auth()->user()->is_manajemen == 0)
                 <li class="nav-item">
                     <a href="/profile" class="nav-link">
                         <i class=" nav-icon fas fa-user-edit"></i>
                         <p>Profil</p>
                     </a>
                 </li>
-                @endif
+                @endif --}}
 
             </ul>
         </nav> <!-- /.en- sidebar -->

@@ -14,13 +14,15 @@ class Obat extends Model
     ];
 
     protected $fillable = [
-        'namaobat',
-        'hargaobat',
+        'nama_obat',
+        'harga_obat',
+        'kategori_obat',
+        'stok_obat',
     ];
 
     public function pembelians()
     {
-        return $this->belongsToMany(Pembelian::class);
+        return $this->belongsToMany(Pembelian::class, 'detail_pembelians')->withPivot('jumlah_pembelian', 'subtotal_pembelian', 'estimasi_obat_habis', 'tgl_dipesan')
+            ->withTimestamps();
     }
-
 }

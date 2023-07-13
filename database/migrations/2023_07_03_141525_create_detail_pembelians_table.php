@@ -16,7 +16,8 @@ return new class extends Migration
             $table->foreignId('pembelian_id')->constrained()->cascadeOnDelete();
             $table->foreignId('obat_id')->constrained()->cascadeOnDelete();
             $table->dateTime('tgl_dipesan');
-            $table->dateTime('estimasi_obat_habis');
+            $table->date('estimasi_obat_habis');
+            $table->integer('jumlah_pembelian');
             $table->integer('subtotal_pembelian');
             $table->timestamps();
         });
