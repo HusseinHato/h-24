@@ -187,12 +187,12 @@
 
             <div class="form-group-md-2 p-1">
               <label for="jumlah">Jumlah</label>
-              <input type="number"  class="form-control" name="jumlah[]" id="jumlah">
+              <input type="number"  class="form-control" name="jumlah[]" id="jumlah" max={{ $item->stok_obat }} required>
             </div>
 
             <div class="form-group-md-2 p-1">
-              <label for="jumlah">Estimasi Habis</label>
-              <input type="date" class="form-control" name="est[]">
+              <label for="estim">Estimasi Habis</label>
+              <input type="date" class="form-control" name="est[]" id="estim" required>
             </div>
           </div>
 
@@ -202,7 +202,7 @@
 
           <div class="form-group">
             <label for="catatanpasien">Catatan Pasien</label>
-            <textarea name="catatan" id="" cols="152" rows="3"></textarea>
+            <textarea name="catatan" id="" cols="152" rows="3" required></textarea>
         </div>
 
         </div>

@@ -165,7 +165,7 @@
                 <div class="row">
                     <div class="col-6">
                         <label for="Nama">Nama</label>
-                        <input name="nama" type="text" class="form-control" placeholder="Masukkan Nama...">
+                        <input name="nama" type="text" class="form-control" placeholder="Masukkan Nama..." required>
                     </div>
                     <div class="col-6">
                       <label for="Nama">Role</label>
@@ -179,17 +179,17 @@
 
               <div class="form-group">
                 <label for="nomertelponpegawai">No Telp</label>
-                <input name="notelp" type="number" id="" class="form-control" placeholder="Masukkan NoTelp...">
+                <input name="notelp" type="number" id="" class="form-control" placeholder="Masukkan NoTelp..." required>
             </div>
 
             <div class="form-group">
               <label for="nomertelponpegawai">Email</label>
-              <input name="email" type="text" id="" class="form-control" placeholder="Masukkan Email...">
+              <input name="email" type="text" id="" class="form-control" placeholder="Masukkan Email..." required>
           </div>
 
           <div class="form-group">
             <label for="nomertelponpegawai">Password</label>
-            <input name="password" type="text" id="" class="form-control" placeholder="Masukkan Password...">
+            <input name="password" type="text" id="" class="form-control" placeholder="Masukkan Password..." required>
         </div>
 
             <div class="form-group">

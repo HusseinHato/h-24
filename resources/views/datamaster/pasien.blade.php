@@ -153,17 +153,17 @@
             <div class="form-group">
                 <label for="namapasien">Nama</label>
                 <input name="user_id" value="{{ Auth::user()->id }}" hidden>
-                <input name="nama" type="text" id="" class="form-control" placeholder="Masukkan Nama...">
+                <input name="nama" type="text" id="" class="form-control" placeholder="Masukkan Nama..." required>
             </div>
 
             <div class="form-group">
                 <label for="Nama">Alamat</label>
-                <textarea class="form-control" name="alamatpasien" id="" cols="152" rows="3"></textarea>
+                <textarea class="form-control" name="alamatpasien" id="" cols="152" rows="3" required></textarea>
             </div>
 
             <div class="form-group">
                 <label for="Nama">No Telp</label>
-                <input type="number" name="notelp" id="" class="form-control" placeholder="Masukkan Notelp...">
+                <input type="number" name="notelp" id="" class="form-control" placeholder="Masukkan Notelp..." required>
             </div>
 
             <div class="form-group">
