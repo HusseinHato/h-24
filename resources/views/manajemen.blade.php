@@ -31,7 +31,7 @@
             <!-- small box -->
             <div class="small-box bg-info">
               <div class="inner">
-                <h3>10</h3>
+                <h3>{{ $jml_user }}</h3>
 
                 <p>Data Pegawai</p>
               </div>
@@ -47,7 +47,7 @@
             <!-- small box -->
             <div class="small-box bg-success">
               <div class="inner">
-                <h3>53</h3>
+                <h3>{{ $jml_obat }}</h3>
 
                 <p>Data Obat</p>
               </div>
@@ -63,7 +63,7 @@
             <!-- small box -->
             <div class="small-box bg-secondary">
               <div class="inner">
-                <h3>53</h3>
+                <h3>{{ $jml_pembelian }}</h3>
 
                 <p>Data Stok Obat</p>
               </div>
@@ -79,7 +79,7 @@
             <!-- small box -->
             <div class="small-box bg-warning">
               <div class="inner">
-                <h3>44</h3>
+                <h3>{{ $jml_pasien }}</h3>
 
                 <p>Data Pasien</p>
               </div>
@@ -94,15 +94,6 @@
 
         </div>
         <!-- /.row -->
-
-        <div id="card">
-            <h2>Pilih Tanggal:</h2>
-            <input type="date" id="tanggal" onchange="updateChart()" />
-
-            <div id="chart-container">
-              <canvas id="myChart"></canvas>
-            </div>
-        </div>
 
 
         <div class="card">
