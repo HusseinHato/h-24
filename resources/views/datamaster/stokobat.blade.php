@@ -59,6 +59,11 @@
                                 <td>
                                     <a href="" class="btn btn-link text-info" data-toggle="modal"
                                         data-target="#editpasien{{$item->id}}"><i class="fas fa-edit"></i>Edit</a>
+                                        <button form="deleteobat" class="btn btn-danger">Delete</button>
+                                        <form id="deleteobat" action="/delete" method="POST" class="d-none">
+                                            @csrf
+                                            <input type="hidden" name="id" value={{ $item->id }}>
+                                        </form>
                                     @if($item->stok_obat>0)
                                     <button type="button" class="btn btn-success">Tersedia <span
                                             class="badge"></span></button>

@@ -72,8 +72,13 @@ class ObatController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Obat $obat)
+    public function destroy(Request $request)
     {
         //
+        $obat = Obat::findOrFail($request->id);
+        $obat->delete();
+
+        return redirect('/stokobat');
+
     }
 }

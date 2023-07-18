@@ -40,6 +40,7 @@ Route::group(['middleware' => ['auth', 'role']], function () {
     Route::get('/stokobat', [ObatController::class, 'index']);
     Route::post('/addobat', [ObatController::class, 'store']);
     Route::post('/editobat', [ObatController::class, 'update']);
+    Route::post('/delete', [ObatController::class, 'destroy']);
 
     // Route::get('/stokobat', function () {
     //     return view('datamaster/stokobat');
