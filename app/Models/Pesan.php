@@ -12,4 +12,11 @@ class Pesan extends Model
     protected $guarded = [
         'id'
     ];
+
+    protected $fillable = [
+        'sender',
+        'target',
+        'waktu_pesan_dibuat',
+        'isi_pesan'
+    ];
 }

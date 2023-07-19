@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
+use App\Models\Pesan;
+use Carbon\Carbon;
+
 
 class FonnteController extends Controller
 {
@@ -65,6 +68,14 @@ class FonnteController extends Controller
                     "message" => $pesan
                 ];
                 $this->sendFonnte($sender, $reply);
+
+                Pesan::create([
+                    "sender" => $sender,
+                    "target" => $sender,
+                    "isi_pesan" => $reply["message"],
+                    "waktu_pesan_dibuat" => Carbon::now(),
+                ]);
+
                 return;
             }
 
@@ -75,6 +86,14 @@ class FonnteController extends Controller
                     "message" => $pesan
                 ];
                 $this->sendFonnte($sender, $reply);
+
+                Pesan::create([
+                    'sender' => $sender,
+                    'target' => $sender,
+                    'isi_pesan' => $reply["message"],
+                    'waktu_pesan_dibuat' => Carbon::now(),
+                ]);
+
                 return;
             }
 
@@ -104,6 +123,14 @@ class FonnteController extends Controller
                         "message" => $pesan
                     ];
                     $this->sendFonnte($nomorTelepon, $reply);
+
+                    Pesan::create([
+                        'sender' => $sender,
+                        'target' => $nomorTelepon,
+                        'isi_pesan' => $reply["message"],
+                        'waktu_pesan_dibuat' => Carbon::now(),
+                    ]);
+
                     $sudah = true;
                     return;
                 }
@@ -130,6 +157,14 @@ class FonnteController extends Controller
                             "message" => $pesan
                         ];
                         $this->sendFonnte($nomorTujuan, $reply);
+
+                        Pesan::create([
+                            'sender' => $sender,
+                            'target' => $nomorTujuan,
+                            'isi_pesan' => $reply["message"],
+                            'waktu_pesan_dibuat' => Carbon::now(),
+                        ]);
+
                         $sudah = true;
                         break;
                     }
@@ -152,6 +187,14 @@ class FonnteController extends Controller
                 }
 
                 $this->sendFonnte($nomorTujuan, $reply);
+
+                Pesan::create([
+                    'sender' => $sender,
+                    'target' => $nomorTujuan,
+                    'isi_pesan' => $reply["message"],
+                    'waktu_pesan_dibuat' => Carbon::now(),
+                ]);
+
                 $sudah = true;
                 return;
             }

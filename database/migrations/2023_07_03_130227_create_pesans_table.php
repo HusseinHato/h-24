@@ -15,8 +15,10 @@ return new class extends Migration
             $table->id();
             $table->timestamps();
             $table->text('isi_pesan');
-            $table->datetime('waktu_pesan_masuk');
-            $table->datetime('waktu_pesan_direspon')->nullable();
+            $table->string('sender');
+            $table->string('target');
+            $table->datetime('waktu_pesan_dibuat');
+            // $table->datetime('waktu_pesan_direspon')->nullable();
         });
     }
 
