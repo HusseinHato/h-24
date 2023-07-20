@@ -92,6 +92,28 @@
                 </li>
                 @endif
 
+                @if (auth()->user()->is_manajemen == 1)
+                <li class="nav-item">
+                    <a href="/historichat" class="nav-link">
+                        <i class="nav-icon fas fa fa-comment"></i>
+                        <p>
+                           Histori Chat
+                        </p>
+                    </a>
+                </li>
+                @endif
+
+                @if (auth()->user()->is_manajemen == 0)
+                <li class="nav-item">
+                    <a href="/historichatpegawai" class="nav-link">
+                        <i class="nav-icon fas fa fa-comment"></i>
+                        <p>
+                           Histori Chat
+                        </p>
+                    </a>
+                </li>
+                @endif
+
                 {{-- <li class="nav-header">REPORT</li>
                 <li class="nav-item">
                     <a href="#" class="nav-link">

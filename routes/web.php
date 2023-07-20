@@ -9,6 +9,7 @@ use App\Models\Pembelian;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\PesanController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -42,6 +43,7 @@ Route::group(['middleware' => ['auth', 'role']], function () {
     Route::post('/editobat', [ObatController::class, 'update']);
     Route::post('/delete', [ObatController::class, 'destroy']);
 
+    Route::get('/historichat', [PesanController::class, 'index']);
     // Route::get('/stokobat', function () {
     //     return view('datamaster/stokobat');
     // })->middleware('auth');
@@ -63,6 +65,8 @@ Route::get('/obat', [PembelianController::class, 'index']);
 Route::post('/addpembelian', [PembelianController::class, 'store']);
 Route::post('/updatepembelian', [PembelianController::class, 'update']);
 Route::get('/obat/{id}/stok', [PembelianController::class, 'getstok']);
+Route::get('/historichatpegawai', [PesanController::class, 'indexpegawai']);
+
 
 
 Route::get('/profile', function () {
